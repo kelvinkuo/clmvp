@@ -1,1 +1,3 @@
 # clmvp
+## Server
+- django + redis
