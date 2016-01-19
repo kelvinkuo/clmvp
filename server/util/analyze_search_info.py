@@ -5,6 +5,7 @@
 # 分析日志数据
 import re
 import requests
+import time
 
 
 def get_city_by_ip(ip):
@@ -15,6 +16,7 @@ def get_city_by_ip(ip):
 
     try:
         r = requests.get('http://ip.taobao.com/service/getIpInfo.php?ip=%s' % ip)
+        time.sleep(0.1)
         city = r.json()['data']['country'] + r.json()['data']['city']
     except Exception as e:
         city = ''
